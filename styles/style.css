@@ -1,5 +1,7 @@
 body {
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .header {
@@ -21,27 +23,25 @@ body {
   padding: 0;
   list-style: none;
 }
-
-.menu__item-active {
-  white-space: nowrap;
-}
-
-.menu__item-active a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .menu__item {
   display: list-item;
   list-style-type: circle;
   list-style-position: inside;
   margin-left: 0;
 }
-
 .menu__item a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.menu__item-active {
+  white-space: nowrap;
+  list-style-type: none;
+}
+
+.menu__item-active a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo img {
@@ -60,8 +60,12 @@ body {
   width: 240px;
   margin-left: 0;
   box-sizing: border-box;
+  line-height: 24px;
+  font-size: 18px;
 }
-
+.address__line {
+  margin: 0;
+}
 .address__line-link {
   color: inherit;
   text-decoration: underline;
@@ -69,9 +73,8 @@ body {
 }
 
 .cover {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/cover.jpg);
+  position: relative;
+  background-image: url(../images/cover.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -79,6 +82,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   padding: 165px 50px 50px;
   box-sizing: border-box;
   min-height: 757px;
@@ -97,6 +101,8 @@ body {
   color: #ffffff;
   letter-spacing: 24px;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .title span:nth-child(1) {
@@ -123,6 +129,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .description p {
@@ -154,6 +162,7 @@ body {
 
 .lots {
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
   list-style: none;
   width: 1052px;
@@ -165,7 +174,7 @@ body {
 
 .lots li {
   width: 334px;
-  height: 596px;
+  min-height: 596px;
   box-sizing: border-box;
   list-style: none;
 }
@@ -178,24 +187,29 @@ body {
 }
 
 .card {
-  height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: 596px;
+  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  position: relative;
 }
 
 .content {
-  position: static;
-  padding: 0;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 20px;
+  padding: 48px 40px;
+  box-sizing: border-box;
 }
 
 .card__title {
-  position: absolute;
-  top: 48px;
-  left: 40px;
   width: 254px;
   margin: 0;
   font-size: 22px;
@@ -211,24 +225,7 @@ body {
   white-space: nowrap;
 }
 
-.lots li:nth-child(1) .content p {
-  top: 404px;
-  height: 144px;
-}
-
-.lots li:nth-child(2) .content p {
-  top: 188px;
-  height: 360px;
-}
-
-.lots li:nth-child(3) .content p {
-  top: 284px;
-  height: 264px;
-}
-
 .content p {
-  position: absolute;
-  left: 40px;
   width: 254px;
   margin: 0;
   font-size: 20px;
@@ -237,35 +234,29 @@ body {
 }
 
 .card-film {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/card-lot-01.jpg);
+  background-image: url(../images/card-lot-01.jpg);
 }
 .card-book {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/card-lot-02.jpg);
+  background-image: url(../images/card-lot-02.jpg);
 }
 .card-painting {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/card-lot-03.jpg);
+  background-image: url(../images/card-lot-03.jpg);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .title-more {
+  display: block;
   width: 1052px;
   margin: 30px auto 0;
   padding: 0 0 0 40px;
   box-sizing: border-box;
   font-size: 20px;
+  font-weight: 400;
   line-height: 25px;
-}
-
-.title-more a {
-  display: inline-block;
-  width: 192px;
-  height: 25px;
-  line-height: 25px;
-  color: inherit;
+  color: #000000;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
