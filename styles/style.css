@@ -28,6 +28,8 @@ body {
   list-style-type: circle;
   list-style-position: inside;
   margin-left: 0;
+  font-size: 18px;
+  line-height: 100%;
 }
 .menu__item a {
   color: inherit;
@@ -351,6 +353,7 @@ body {
   list-style: none;
   text-align: center;
   width: 164px;
+  font-size: 18px;
 }
 
 .footer__menu-link {
